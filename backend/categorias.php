@@ -1,7 +1,7 @@
  <?php
-/* ahora funciona a partir de DATABASE, dsp lo tengo que acomodar con AUTOLOAD */
+ /* @Autor AGUSTIN GABRIEL PEREZ - API 3 */
 
-  include "..\class\database.php";
+  include "..\class\database.php"; 
   include "..\class\autoload.php";
 
   if(isset($_POST["accion"]) && $_POST["accion"] == "guardar")
