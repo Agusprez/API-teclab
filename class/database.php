@@ -80,5 +80,9 @@ class baseDeDatos {
             throw new Exception("No se pudo realizar la eliminación");
         }
     }
+
+    
+    
 }
+
 ?>
