@@ -8,7 +8,7 @@
       $miProducto-> nombre_producto = $_POST['producto_nombre'];
       $miProducto-> descripcion_producto = $_POST['producto_descripcion'];
       $miProducto-> precio_producto = $_POST['producto_precio'];
-      $miProducto-> imagen_producto = $_POST['producto_imagen'];
+      $miProducto-> imagen_producto = "https://raw.githubusercontent.com/Agusprez/API-teclab/main/assets/img/imagenes-productos/".$_POST['producto_imagen'];
       $miProducto-> categoria_producto = $_POST['producto_categoria'];
       
       $miProducto->guardar();

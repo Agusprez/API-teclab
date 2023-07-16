@@ -44,3 +44,8 @@ div.espaciador {
 .card {
     background-color: whitesmoke;
 }
+
+.col-md-3 {
+    margin-top: 20px;
+
+}

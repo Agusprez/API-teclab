@@ -28,32 +28,35 @@
         <div class="row">
           <?php foreach ($lista_productos as $producto) { ?>
           <div class="col-md-3">
-            <div class="card">
+            <div class="card h-100">
               <?php if (isset($producto['imagen_producto']) && $producto['imagen_producto'] !== '') { ?>
               <img src="<?php echo $producto['imagen_producto'] ?>" class="card-img-top" alt="Imagen del producto">
               <?php } else { ?>
               <div class="card-img-top d-none"></div>
               <?php } ?>
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">
                   <?php echo $producto['nombre_producto'] ?>
                 </h5>
                 <h6 class="card-subtitle mb-2 text-muted">
                   <?php echo seleccionarCategoria($producto['categoria_producto']) ?>
                 </h6>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   <?php echo $producto['descripcion_producto'] ?>
                 </p>
               </div>
             </div>
           </div>
           <?php } ?>
+          <div class="espaciador"></div>
         </div>
+
 
       </div>
     </div>
     <div class="espaciador"></div>
     <a class="btn btn-primary" href="./backend/categorias.php">Listado de categorias</a>
+    <div class="espaciador"></div>
     <footer class="marca">
       <span class="d-flex justify-content-center">PEREZ AGUSTIN GABRIEL - Programacion WEB 2023</span>
     </footer>
