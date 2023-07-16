@@ -36,18 +36,22 @@
               </thead>
               <tbody>
                 <?php
-                foreach ($lista_categorias as $categoria) {
-                  echo "<tr>";
-                  echo "<td>" . $categoria['id_categoria'] . "</td>";
-                  echo "<td>" . $categoria['nombre_categoria'] . "</td>";
-                  echo "</tr>";
-                }
-                ?>
+                foreach ($lista_categorias as $categoria) { ?>
+                <tr>
+                  <td>
+                    <?php echo $categoria['id_categoria']?>
+                  </td>
+                  <td>
+                    <?php echo $categoria['nombre_categoria']?>
+                  </td>
+                </tr>
+                <?php } ?>
+
               </tbody>
             </table>
           </div>
         </div>
-        <a class="btn btn-primary" href="views/categorias.html">Agregar nueva categoría</a>
+        <a class="btn btn-primary" href="categorias.php?accion=agregar">Agregar nueva categoría</a>
       </div>
 
       <footer class="marca">

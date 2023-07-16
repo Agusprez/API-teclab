@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/jpg" href="../../assets/img/favicon.png" />
+  <link rel="icon" type="image/jpg" href="../assets/img/favicon.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <link href="../../assets/css/estilos.css" rel="stylesheet">
+  <link href="../assets/css/estilos.css" rel="stylesheet">
   <title>Escalando - Tienda de montaña y escalada</title>
 </head>
 
@@ -16,7 +16,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand image-container" href="#">
-          <img class="imagen1" src="../../assets/img/logo con imagen.png" alt="Icono de la pagina">
+          <img class="imagen1" src="../assets/img/logo con imagen.png" alt="Icono de la pagina">
         </a>
         <h4 class="my-0 mr-md-auto font-weight-normal"> Escalando - Tienda de montaña</h4>
       </nav>
@@ -25,16 +25,18 @@
     <div>
       <h2>Alta de Categoría</h2>
       <div class="row">
-        <form id="form_alta_categoria" class="form-group">
+        <form id="form_alta_categoria" class="form-group" method="post">
           <label for="categoria_nombre">Nombre de categoría:</label>
           <div class="espaciador"></div>
-          <input class="form-control" type="text" id="categoria_nombre" placeholder="Ingrese el nombre de la categoría"
-            autocomplete="off">
+          <input type="hidden" value="guardar" name="accion">
+          <input class="form-control" type="text" name="categoria_nombre" id="categoria_nombre"
+            placeholder="Ingrese el nombre de la categoría" autocomplete="off">
           <div class="espaciador"></div>
 
-          <button class="btn btn-primary" type="submit">Dar de alta nueva
+          <button class="btn btn-primary" type="submit" action="../categorias.php?guardar">Dar de alta
+            nueva
             categoria</button>
-          <button class="btn btn-secondary" type="button">Cancelar</button>
+          <a class="btn btn-secondary" href="categorias.php" type="button">Cancelar</a>
           <div class="espaciador"></div>
         </form>
       </div>
@@ -48,5 +50,6 @@
     crossorigin="anonymous"></script>
   <script src="../../assets/js/validaciones.js"></script>
 </body>
+
 
 </html>

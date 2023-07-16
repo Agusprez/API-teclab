@@ -1,4 +1,6 @@
 <?php
+
+
 $servername = "localhost"; 
 $username = "root";
 $password = "";
@@ -14,8 +16,12 @@ if ($conexion->connect_error) {
 
 
 class baseDeDatos {
-    
-    
+    private $gdb;
+
+    public function __construct()
+    {
+        $this->gdb = new PDO('mysql:host=localhost;dbname=miproyecto',"root","");
+    }
     // Función SELECT
     static function select($table) {
     global $conexion; 
@@ -33,6 +39,21 @@ class baseDeDatos {
     } else {
         return array();
     }
-}
+    }
+
+    // Función INSERT
+
+    function insertar($tabla, $campos, $valores, $arr_prepare = "null"){
+        $sql = "INSERT INTO ".$tabla." (".implode(", ",$campos).") VALUES (".implode(". ",$valores).")";
+        $resourse = $this->gdb->prepare($sql);
+        $resourse->execute($arr_prepare);
+
+        if($resourse){
+            return true;
+        } else {
+            echo $resourse->errorInfo();
+            throw new Exception ("No se pudo realizar la consulta ");
+        }
+    }
 }
 ?>
