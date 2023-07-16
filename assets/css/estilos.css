@@ -40,3 +40,7 @@ body {
 div.espaciador {
     margin-top: 20px;
 }
+
+.card {
+    background-color: whitesmoke;
+}
